@@ -90,7 +90,7 @@ def animate1():
 # In short: the outer canvas draw function includes calls to ofscreen_canvas.draw, and if called as as a request_draw from the loop, breaks
 
 
-# @canvas.request_draw # don't register in the loop
+@canvas.request_draw
 def animate2():
     camera1.set_view_offset(800, 600, 0, 0, 400, 300)
     im = offscreen_canvas.draw()
@@ -117,5 +117,5 @@ renderer = renderer2  # for the screenshot code
 if __name__ == "__main__":
     print(__doc__)
     # call once instead of a loop
-    animate2()
-    # loop.run()
+    # animate2()
+    loop.run()
